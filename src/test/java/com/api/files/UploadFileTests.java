@@ -11,9 +11,9 @@ public class UploadFileTests {
 
 @Test
 public void uploadImage (){
-    URL resourceUrl = getClass().getClassLoader().getResource("src/main/resources/Screenshot.png");
+    //URL resourceUrl = getClass().getClassLoader().getResource("src\\main\\java\\com\\api\\utils\\Screenshot.png");
 
-    File fileToUpload = new File(resourceUrl.getPath());
+    File fileToUpload = new File("src\\main\\java\\com\\api\\utils\\Screenshot.png");
 
    Response response= RestAssured.given()
             .multiPart("file", fileToUpload)

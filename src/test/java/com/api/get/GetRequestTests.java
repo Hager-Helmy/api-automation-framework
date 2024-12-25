@@ -1,11 +1,16 @@
 package com.api.get;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+
+import java.util.logging.Level;
 
 import static io.restassured.RestAssured.given;
 
@@ -14,6 +19,8 @@ public class GetRequestTests
   @BeforeSuite
     void setUp(){}
     @Test
+    @Owner("Hager")
+    @Description("Verify users Data")
     void getRequest(){
         RestAssured.baseURI="https://reqres.in";
         RestAssured.basePath="/api/users";
@@ -36,7 +43,6 @@ public class GetRequestTests
    //JSON Path Example
     @Test
     void getResponseData(){
-        //RestAssured.baseURI="https://reqres.in/api/users";
         String url = "https://reqres.in/api/users/1";
 
         Response response = RestAssured.given().get(url).andReturn();
