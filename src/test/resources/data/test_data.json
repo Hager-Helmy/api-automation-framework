@@ -1,0 +1,25 @@
+{
+  "login":{
+    "successful":{
+      "email":"eve.holt@reqres.in",
+      "password":"cityslicka",
+      "expected_status": 200,
+      "content_type": "application/json"
+    },
+    "unsuccessful":{
+      "email":"peter@klaven",
+      "expected_status": 400,
+      "expected_error": "Missing password"
+    }
+  },
+  "registration": {
+    "name": "morpheus",
+    "job": "leader",
+    "expected_status":201
+  },
+  "users": {
+    "expected_first_user":"George",
+    "page":1,
+    "delay_seconds":3
+  }
+}
